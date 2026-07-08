@@ -1,7 +1,9 @@
 # -_calculadora_Java_MySQL_JDBC_- :.
 # Calculadora Java + MySQL + JDBC:
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/77f48fae-aa1b-4adc-95b5-f6be2f207114" />  
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/77f48fae-aa1b-4adc-95b5-f6be2f207114" />    
+
+<img width="2556" height="1034" alt="image" src="https://github.com/user-attachments/assets/c99b0f13-f283-4cb7-b1e1-94d0e98ca132" />    
 
 ```
 
