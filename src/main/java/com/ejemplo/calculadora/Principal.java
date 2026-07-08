@@ -1,17 +1,99 @@
 package com.ejemplo.calculadora;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Principal {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class Principal {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+
+        Calculadora calculadora=new Calculadora();
+
+        OperacionDAO dao=new OperacionDAO();
+
+        System.out.println("CALCULADORA");
+
+        System.out.print("Numero 1: ");
+
+        double n1=sc.nextDouble();
+
+        System.out.print("Numero 2: ");
+
+        double n2=sc.nextDouble();
+
+        System.out.println();
+
+        System.out.println("1 Sumar");
+        System.out.println("2 Restar");
+        System.out.println("3 Multiplicar");
+        System.out.println("4 Dividir");
+
+        int opcion=sc.nextInt();
+
+        double resultado=0;
+
+        String operacion="";
+
+        switch(opcion){
+
+            case 1:
+
+                resultado=calculadora.sumar(n1,n2);
+
+                operacion="SUMA";
+
+                break;
+
+            case 2:
+
+                resultado=calculadora.restar(n1,n2);
+
+                operacion="RESTA";
+
+                break;
+
+            case 3:
+
+                resultado=calculadora.multiplicar(n1,n2);
+
+                operacion="MULTIPLICACION";
+
+                break;
+
+            case 4:
+
+                resultado=calculadora.dividir(n1,n2);
+
+                operacion="DIVISION";
+
+                break;
+
+            default:
+
+                System.out.println("Opcion incorrecta");
+
+                return;
+
         }
+
+        System.out.println();
+
+        System.out.println("Resultado = "+resultado);
+
+        Operacion op=new Operacion(
+
+                n1,
+
+                n2,
+
+                operacion,
+
+                resultado
+
+        );
+        dao.guardar(op);
+        dao.listar();
+        
     }
 }
